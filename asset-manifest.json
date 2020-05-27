@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-native/static/css/main.b044d04a.chunk.css",
+    "main.js": "/react-native/static/js/main.9167ef4b.chunk.js",
+    "main.js.map": "/react-native/static/js/main.9167ef4b.chunk.js.map",
+    "runtime-main.js": "/react-native/static/js/runtime-main.80abc795.js",
+    "runtime-main.js.map": "/react-native/static/js/runtime-main.80abc795.js.map",
+    "static/js/2.286c2ded.chunk.js": "/react-native/static/js/2.286c2ded.chunk.js",
+    "static/js/2.286c2ded.chunk.js.map": "/react-native/static/js/2.286c2ded.chunk.js.map",
+    "index.html": "/react-native/index.html",
+    "precache-manifest.85128767db6d9cf5737dedc9278e8ac8.js": "/react-native/precache-manifest.85128767db6d9cf5737dedc9278e8ac8.js",
+    "service-worker.js": "/react-native/service-worker.js",
+    "static/css/main.b044d04a.chunk.css.map": "/react-native/static/css/main.b044d04a.chunk.css.map",
+    "static/js/2.286c2ded.chunk.js.LICENSE.txt": "/react-native/static/js/2.286c2ded.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80abc795.js",
+    "static/js/2.286c2ded.chunk.js",
+    "static/css/main.b044d04a.chunk.css",
+    "static/js/main.9167ef4b.chunk.js"
+  ]
+}
