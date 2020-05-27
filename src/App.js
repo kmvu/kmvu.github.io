@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Table from './Table.js'
+import Form from './Form.js'
+
+class App extends Component {
+    initial_state = {
+        characters: [],
+        data: []
+    }
+    state = this.initial_state
+
+    remove = removeIndex => {
+        const { characters } = this.state
+
+        this.setState({
+            characters: characters.filter((character, index) => {
+                return index != removeIndex
+            })
+        })
+    }
+
+    submit = character => {
+        this.setState({ characters: [...this.state.characters, character] })
+    }
+
+    componentDidMount() {
+        const url = "https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*"
+
+        fetch(url)
+            .then(result => result.json())
+            .then(json => {
+                this.setState({
+                    data: json.filter((elem, index) => {
+                        return elem != "" && index > 0
+                    })
+                })
+             })
+    }
+
+    render() {
+        const { data } = this.state
+        
+        const result = data.map((entry, index) => {
+            return <li key = { index }>{ entry }</li>
+        })
+
+        return (
+            <div className = "container">
+                <ul>{ result }</ul>
+
+                <Table
+                    charactersData = { this.state.characters }
+                    removeCharacter = { this.remove } />
+
+                <Form
+                    handleSubmission = { this.submit } />
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
