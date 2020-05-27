@@ -15,7 +15,7 @@ class App extends Component {
 
         this.setState({
             characters: characters.filter((character, index) => {
-                return index != removeIndex
+                return index !== removeIndex
             })
         })
     }
@@ -32,7 +32,7 @@ class App extends Component {
             .then(json => {
                 this.setState({
                     data: json.filter((elem, index) => {
-                        return elem != "" && index > 0
+                        return elem !== "" && index > 0
                     })
                 })
              })
@@ -40,7 +40,7 @@ class App extends Component {
 
     render() {
         const { data } = this.state
-        
+
         const result = data.map((entry, index) => {
             return <li key = { index }>{ entry }</li>
         })
